@@ -1,0 +1,42 @@
+<% include ../partials/header %>
+
+
+
+<div class = "container">
+
+    <header class = "jumbotron">
+        
+        <div class = "container">
+       <h2>We are Travel Nigeria</h2>
+        <p>Let's help suggest best travel destinations today within Nigeria</p>
+        
+        <a href = "toursites/new" class = "btn btn-success btn-lg">Add New Tour Site</a>
+        </div>
+    
+    </header>
+
+    <div class = "row text-center" style = "display:flex; flex-wrap:wrap">
+    
+        <% toursites.forEach(function(toursite){ %>
+            <div class = "col-md-3 col-sm-6">
+                
+                <div class = "thumbnail">
+                    <img src = "<%= toursite.img %>">
+                     <div class = "caption">
+                      <h4> <%= toursite.name %></h4>
+                     </div>
+                     <p><a href="/toursites/<%= toursite._id %>" class="btn btn-primary">More Info</a></p>
+                </div>
+                
+                
+                
+            </div>
+        <% }); %>
+    
+    </div>
+
+    <a href = "/">Go to home page</a>
+    
+    </div>
+
+<% include ../partials/footer %>
